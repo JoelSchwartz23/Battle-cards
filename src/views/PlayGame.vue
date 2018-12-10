@@ -1,13 +1,13 @@
 <template>
   <div v-if="game.id" class="about container-fluid">
-    <h1><u>Battle Cards</u></h1>
+    <h1><u><b>Battle Bots</b>... and sometimes Cats..</u></u></h1>
     <div class="row restart">
       <button @click="playAgain()">
         <h5>Restart Game</h5>
       </button>
     </div>
     <div class="row">
-      <h1> <u>Opponent: {{opponentCardId.name}}</u></h1>
+      <h1> <u>{{game.opponent.name}}: {{opponentCardId.name}}</u></h1>
     </div>
     <h1 class="mb-5"> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
     <div class="row">
@@ -26,10 +26,10 @@
       <h1><u>You Lose!</u></h1>
     </div>
     <div class="row">
-      <h1><u>Player: {{playerCardId.name}}</u></h1>
+      <h1><u>{{game.player.name}}: {{playerCardId.name}}</u></h1>
     </div>
     <div class="cardsleft mt-5">
-      <h1> Remaining Cards:{{game.player.remainingCards}}</h1>
+      <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
     </div>
 
     <div class="row">

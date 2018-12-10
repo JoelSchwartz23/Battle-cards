@@ -2,9 +2,7 @@
   <div class="home container fluid">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <div class="row">
-      <h1>Battle Cards</h1>
-    </div>
-    <div class="row">
+      <h1><b>Battle Bots</b>...and sometimes cats</h1>
       <form @submit.prevent="startGame">
         <input type="text" placeholder="Enter Name" v-model="gameConfig.playerName">
         <button class="btn btn-success" type="submit">Start</button>

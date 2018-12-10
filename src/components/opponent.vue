@@ -2,7 +2,7 @@
   <div class="opponent container-fluid">
     <div class="row justify-content-center">
       <div class="col-2 card mx-1" v-for="card in opponent.hand" @click="setOpponentCard(card)">
-        <div v-if='card.visible' class="card">
+        <div v-if='card.visible'>
           <h2>{{card.name}}</h2>
           <img :src="card.img" height="254">
           <h2>Attack:{{card.attack}}</h2>
