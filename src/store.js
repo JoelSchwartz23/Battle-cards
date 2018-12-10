@@ -42,8 +42,8 @@ export default new Vuex.Store({
     startGame({ commit }, gameConfig) {
       battlecardsapi.post("", gameConfig)
         .then(res => {
-          console.log('gamedata', res.data)
-          commit('setGame', res.data)
+          console.log('gamedata', res.data.game)
+          commit('setGame', res.data.game)
           router.push({ name: 'playGame', params: { gameId: res.data.game.id } })
         })
         .catch(err => console.error(err.message))
@@ -54,10 +54,10 @@ export default new Vuex.Store({
     setPlayerCard({ commit }, cardId) {
       commit('setPlayerCard', cardId)
     },
-    attack({ dispatch }, data) {
-      battlecardsapi.put("/" + data.gameId, data.attack)
+    attack({ commit }, data) {
+      battlecardsapi.put("/" + data.gameId, data)
         .then(res => {
-          dispatch('getGame')
+          commit('setGame', res.data.game)
         })
     }
   }

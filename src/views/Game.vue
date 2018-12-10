@@ -1,10 +1,15 @@
 <template>
   <div class="home container fluid">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <form @submit.prevent="startGame">
-      <input type="text" placeholder="Enter Name" v-model="gameConfig.playerName">
-      <button class="btn btn-success" type="submit">Start</button>
-    </form>
+    <div class="row">
+      <h1>Battle Cards</h1>
+    </div>
+    <div class="row">
+      <form @submit.prevent="startGame">
+        <input type="text" placeholder="Enter Name" v-model="gameConfig.playerName">
+        <button class="btn btn-success" type="submit">Start</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -32,3 +37,19 @@
     computed: {}
   }
 </script>
+
+<style scoped>
+  .home {
+    background-color: black;
+    height: 100vh;
+    color: orange;
+    font-family: 'Bungee', cursive;
+  }
+
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+</style>
