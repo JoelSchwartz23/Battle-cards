@@ -1,11 +1,11 @@
 <template>
   <div class="player container-fluid">
     <div class="col-2 card mx-1" v-for="card in player.hand" @click="setPlayerCard(card)">
-      <h2>{{card.name}}</h2>
-      <img :src="card.img" height="251">
-      <h2>Attack:{{card.attack}}</h2>
-      <h2>Health:{{card.health}}</h2>
-      <h2>Defense:{{card.defense}}</h2>
+      <h4>{{card.name}}</h4>
+      <img :src="card.img" height="120">
+      <p><i class="fas fa-fist-raised"></i> Attack:{{card.attack}}</p>
+      <p><i class="fas fa-heart"></i> Health:{{card.health}}</p>
+      <p> <i class="fas fa-shield-alt"></i> Defense:{{card.defense}}</p>
     </div>
   </div>
   </div>
@@ -43,6 +43,6 @@
 
   .card:hover {
     box-shadow: 5px 5px black;
-    transform: scale(1.05);
+    transform: scale(.95);
   }
 </style>

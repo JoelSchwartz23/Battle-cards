@@ -1,16 +1,14 @@
 <template>
   <div class="opponent container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-2 card mx-1" v-for="card in opponent.hand" @click="setOpponentCard(card)">
-        <div v-if='card.visible'>
-          <h2>{{card.name}}</h2>
-          <img :src="card.img" height="254">
-          <h2>Attack:{{card.attack}}</h2>
-          <h2>Health:{{card.health}}</h2>
-          <h2>Defense:{{card.defense}}</h2>
-        </div>
-        <img v-if='!card.visible' src="../assets/Card_back-Ragnaros.png" height="490" />
+    <div class="col-2 card mx-1" v-for="card in opponent.hand" @click="setOpponentCard(card)">
+      <div v-if='card.visible'>
+        <h4>{{card.name}}</h4>
+        <img :src="card.img" height="150">
+        <p><i class="fas fa-fist-raised"></i> Attack:{{card.attack}}</p>
+        <p><i class="fas fa-heart"></i> Health:{{card.health}}</p>
+        <p><i class="fas fa-shield-alt"></i> Defense:{{card.defense}}</p>
       </div>
+      <img v-if='!card.visible' src="../assets/Card_back-Ragnaros.png" height="325" />
     </div>
   </div>
   </div>
@@ -21,7 +19,6 @@
     name: 'opponent',
     data() {
       return {
-
       }
     },
     computed: {
@@ -47,6 +44,6 @@
 
   .card:hover {
     box-shadow: 5px 5px black;
-    transform: scale(1.05);
+    transform: scale(.95);
   }
 </style>

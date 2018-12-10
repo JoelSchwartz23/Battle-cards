@@ -6,10 +6,10 @@
         <h5>Restart Game</h5>
       </button>
     </div>
-    <div class="row">
-      <h1> <u>{{game.opponent.name}}: {{opponentCardId.name}}</u></h1>
+    <div class="row opponent">
+      <h1> <u>{{game.opponent.name}}</u>: {{opponentCardId.name}}</h1>
+      <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
     </div>
-    <h1 class="mb-5"> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
     <div class="row">
       <opponent class="col-12 opponent"></opponent>
     </div>
@@ -17,19 +17,19 @@
       <button class="btn mt-5" :disabled="!play()" @click="attack()">Attack</button>
     </div>
     <div v-if="!game.player.dead && game.opponent.dead">
-      <h1><u>You win!</u></h1>
+      <h1><i class="fas fa-trophy"></i> <u>You win!</u></h1>
     </div>
     <div v-if="game.player.dead && game.opponent.dead">
       <h1><u>Tie Game!</u></h1>
     </div>
     <div v-if="game.player.dead && !game.opponent.dead">
-      <h1><u>You Lose!</u></h1>
+      <h1><i class="fas fa-skull"></i><u>You Lose!</u></h1>
     </div>
-    <div class="row">
-      <h1><u>{{game.player.name}}: {{playerCardId.name}}</u></h1>
-    </div>
-    <div class="cardsleft mt-5">
-      <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
+    <div class="row player">
+      <h1><u>{{game.player.name}}</u>: {{playerCardId.name}}</h1>
+      <div class="cardsleft">
+        <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
+      </div>
     </div>
 
     <div class="row">
@@ -92,7 +92,7 @@
 
 <style scoped>
   .btn {
-    font-size: 50px;
+    font-size: 25px;
     background: red;
     color: black;
   }
@@ -114,11 +114,13 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    justify-content: space-between
   }
 
-  /* opponent {
+  .opponent {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-  } */
+    justify-content: space-between
+  }
 </style>
