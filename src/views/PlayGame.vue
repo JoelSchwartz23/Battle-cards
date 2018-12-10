@@ -4,8 +4,8 @@
     <div class="row">
       <div v-if="!game.winner" class="col-12">
         <button v-if="!playerCardId && opponentCardId" @click="attack()">Attack</button>
-        <h1>Player: {{playerCardId}}</h1>
-        <h1>Opponent: {{opponentCardId}}</h1>
+        <h1>Player: {{playerCardId.name}}</h1>
+        <h1>Opponent: {{opponentCardId.name}}</h1>
       </div>
     </div>
     <div class="row">
