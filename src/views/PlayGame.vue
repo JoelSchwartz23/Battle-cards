@@ -14,7 +14,7 @@
       <opponent class="col-12 opponent"></opponent>
     </div>
     <div class="row justify-content-center">
-      <button class="btn mt-4" :disabled="!play()" @click="attack()">Attack</button>
+      <button class="btn mt-5" :disabled="!play()" @click="attack()">Attack</button>
     </div>
     <div v-if="!game.player.dead && game.opponent.dead">
       <h3><i class="fas fa-trophy"></i> <u>You win!</u></h3>
@@ -26,7 +26,7 @@
       <h3><i class="fas fa-skull"></i><u>You Lose!</u></h3>
     </div>
     <div class="row player">
-      <h1><u>{{game.player.name}}</u>: {{playerCardId.name}}</h1>
+      <h3><u>{{game.player.name}}</u>: {{playerCardId.name}}</h3>
       <div class="cardsleft">
         <h3> <u>Remaining Cards:{{game.player.remainingCards}}</u></h3>
       </div>
@@ -98,8 +98,7 @@
   }
 
   .about {
-    background-size: cover;
-    background-position: center;
+    background-image: linear-gradient(to right, black, purple);
     height: 100%;
     color: orange;
     font-family: 'Bungee', cursive;
