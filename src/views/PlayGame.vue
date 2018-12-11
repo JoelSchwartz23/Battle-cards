@@ -1,34 +1,34 @@
 <template>
   <div v-if="game.id" class="about container-fluid">
-    <h1><u><b>Battle Bots</b>... and sometimes Cats..</u></u></h1>
+    <h3><u><b>Battle Bots</b>... and sometimes Cats..</u></u></h3>
     <div class="row restart">
       <button @click="playAgain()">
-        <h5>Restart Game</h5>
+        <h6>Restart Game</h6>
       </button>
     </div>
     <div class="row opponent">
-      <h1> <u>{{game.opponent.name}}</u>: {{opponentCardId.name}}</h1>
-      <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
+      <h3> <u>{{game.opponent.name}}</u>: {{opponentCardId.name}}</h3>
+      <h3 class="mt-1"> <u>Remaining Cards:{{game.player.remainingCards}}</u></h3>
     </div>
     <div class="row">
       <opponent class="col-12 opponent"></opponent>
     </div>
     <div class="row justify-content-center">
-      <button class="btn mt-5" :disabled="!play()" @click="attack()">Attack</button>
+      <button class="btn mt-4" :disabled="!play()" @click="attack()">Attack</button>
     </div>
     <div v-if="!game.player.dead && game.opponent.dead">
-      <h1><i class="fas fa-trophy"></i> <u>You win!</u></h1>
+      <h3><i class="fas fa-trophy"></i> <u>You win!</u></h3>
     </div>
     <div v-if="game.player.dead && game.opponent.dead">
-      <h1><u>Tie Game!</u></h1>
+      <h3><u>Tie Game!</u></h3>
     </div>
     <div v-if="game.player.dead && !game.opponent.dead">
-      <h1><i class="fas fa-skull"></i><u>You Lose!</u></h1>
+      <h3><i class="fas fa-skull"></i><u>You Lose!</u></h3>
     </div>
     <div class="row player">
       <h1><u>{{game.player.name}}</u>: {{playerCardId.name}}</h1>
       <div class="cardsleft">
-        <h1> <u>Remaining Cards:{{game.player.remainingCards}}</u></h1>
+        <h3> <u>Remaining Cards:{{game.player.remainingCards}}</u></h3>
       </div>
     </div>
 
@@ -106,8 +106,9 @@
   }
 
   .restart {
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    top: 5px;
+    right: 20px;
   }
 
   .player {

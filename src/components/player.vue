@@ -1,8 +1,8 @@
 <template>
   <div class="player container-fluid">
     <div class="col-2 card mx-1" v-for="card in player.hand" @click="setPlayerCard(card)">
-      <h4>{{card.name}}</h4>
-      <img :src="card.img" height="120">
+      <h4 class="mb-5">{{card.name}}</h4>
+      <img :src="card.img" height="170">
       <p><i class="fas fa-fist-raised"></i> Attack:{{card.attack}}</p>
       <p><i class="fas fa-heart"></i> Health:{{card.health}}</p>
       <p> <i class="fas fa-shield-alt"></i> Defense:{{card.defense}}</p>
@@ -15,9 +15,7 @@
   export default {
     name: 'player',
     data() {
-      return {
-
-      }
+      return {}
     },
     computed: {
       player() {
@@ -27,7 +25,7 @@
     methods: {
 
       setPlayerCard(cardId) {
-        this.$store.dispatch('setPlayerCard', cardId)
+        this.$store.dispatch("setPlayerCard", cardId)
       }
     }
   }

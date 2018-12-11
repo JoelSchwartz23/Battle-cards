@@ -24,11 +24,11 @@ export default new Vuex.Store({
     },
     setOpponentCard(state, cardId) {
       state.attack.opponentCardId = cardId
-      console.log(state.attack)
+      console.log(state.attack.opponentCardId)
     },
     setPlayerCard(state, cardId) {
       state.attack.playerCardId = cardId
-      console.log(state.attack)
+      console.log(state.attack.playerCardId)
     }
   },
   actions: {
