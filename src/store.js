@@ -20,7 +20,6 @@ export default new Vuex.Store({
   mutations: {
     setGame(state, game) {
       state.game = game
-
     },
     setOpponentCard(state, cardId) {
       state.attack.opponentCardId = cardId
